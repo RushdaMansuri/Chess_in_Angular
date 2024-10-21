@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';  // Import CommonModule for *ngFor and other directives
 
 @Component({
   selector: 'app-chess-board',
+  standalone: true,  // Make sure it's standalone
+  imports: [CommonModule],  // Add CommonModule to imports
   templateUrl: './chess-board.component.html',
-  styleUrls: ['./chess-board.component.css'],
-  standalone: true
+  styleUrls: ['./chess-board.component.css']
 })
 export class ChessBoardComponent {
 
@@ -14,17 +16,16 @@ export class ChessBoardComponent {
     this.initializeBoard();
   }
 
-  // Initialize the board with a 2D array representing rows and columns of the chessboard
   initializeBoard(): void {
     this.board = [
-      ['r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'],  // First row for black pieces
-      ['p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'],  // Second row for black pawns
-      [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],  // Empty row
-      [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],  // Empty row
-      [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],  // Empty row
-      [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],  // Empty row
-      ['P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'],  // Second row for white pawns
-      ['R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R']   // First row for white pieces
+      ['r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'],
+      ['p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'],
+      [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+      [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+      [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+      [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+      ['P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'],
+      ['R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R']
     ];
   }
 }
