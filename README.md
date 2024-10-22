@@ -1,6 +1,6 @@
 # Chess in Angular
 
-Welcome to **Chess in Angular**! This project is a web-based chess game built using Angular, showcasing the classic game of chess with modern web technologies.
+Welcome to **Chess in Angular 18**! This project is a web-based chess game built using Angular, showcasing the classic game of chess with modern web technologies.
 
 ## Table of Contents
 
