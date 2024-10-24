@@ -1,5 +1,14 @@
-<div *ngFor="let row of board; let rowIndex = index" class="chess-row">
-  <div *ngFor="let cell of row; let colIndex = index" class="chess-cell">
-    {{ cell }}
+<div class="chess-board">
+  <div *ngFor="let row of board; let rowIndex = index">
+    <button
+      *ngFor="let piece of row; let colIndex = index"
+      [ngClass]="{
+        selected:
+          selectedPiece?.row === rowIndex && selectedPiece?.col === colIndex
+      }"
+      (click)="selectPiece(rowIndex, colIndex)"
+    >
+      {{ piece }}
+    </button>
   </div>
 </div>

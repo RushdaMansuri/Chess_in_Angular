@@ -1,13 +1,35 @@
-.chess-row {
-  display: flex;
+.chess-board {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr); /* Equal space for each square */
+  grid-template-rows: repeat(8, 1fr);    /* Equal space for each square */
+  gap: 2px;  /* Space between squares */
+  max-width: 90vw;  /* Limit to 90% of the viewport width */
+  max-height: 90vh; /* Limit to 90% of the viewport height */
+  margin: 0 auto;   /* Center the chessboard horizontally */
+  aspect-ratio: 1;  /* Maintain a 1:1 aspect ratio */
 }
 
-.chess-cell {
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid black;
+button {
+  width: 2em;
+  height: 2em;
+  font-size: 3vw;  /* Use responsive units based on viewport width */
   text-align: center;
+  background-color: #f0d9b5;
+  border: none;
+  cursor: pointer;
+}
+
+button:nth-child(even) {
+  background-color: #b58863;  /* Darker color for alternate squares */
+}
+
+.selected {
+  background-color: yellow;  /* Highlight selected piece */
+}
+
+/* Responsive for small screens */
+@media (max-width: 768px) {
+  button {
+    font-size: 5vw;  /* Adjust font size for smaller screens */
+  }
 }
